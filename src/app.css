@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&family=PT+Mono&family=Share+Tech+Mono&display=swap");
+
+:root {
+    --bc: #101010;
+    --fc: #181818;
+    --text: #eeeeee;
+    --color1: #2f6674;
+    --color2: #a25107;
+    --color3: #71115a;
+
+    --font1: "Manrope", sans-serif;
+    --font2: "PT Mono", monospace;
+
+    --fs1: 12px;
+    --fs2: 18px;
+    --fs3: 24px;
+    --fs4: 48px;
+    --fs5: 100px;
+
+    --br: 5px;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bc);
+    color: var(--text);
+    font-family: var(--font1);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: min(92%, 1200px);
+    margin-bottom: 100px;
+}
+
+p {
+    font-size: var(--fs2);
+}
+h2 {
+    font-size: var(--fs4);
+}
+h3 {
+    font-size: var(--fs3);
+}
+a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: var(--fs2);
+}
+
+/* Estilos para la barra de desplazamiento en la barra lateral */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

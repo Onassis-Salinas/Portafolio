@@ -1,0 +1,33 @@
+<script>
+    import { language } from "../store";
+    let languageSelected;
+    const unsubscribe = language.subscribe((val) => (languageSelected = val));
+</script>
+
+<section>
+    <a href="https://github.com/Onassis-Salinas"><img src="/Logos/Github.svg" alt="" /></a>
+    <a href="https://www.facebook.com/people/Onassis-developer/61550880837299/"><img src="/Logos/Facebook.svg" alt="" /></a>
+    <a href="https://www.instagram.com/onassis_developer/"> <img src="/Logos/Instagram.svg" alt="" /></a>
+    <a href="mailto:onassis.dev@gmail.com"> <img src="/Logos/Mail.svg" alt="" /></a>
+    <p>{["Diseñado y programado por Onassis Salinas", "Designed and coded by Onassis Salinas"][languageSelected]}</p>
+</section>
+
+<style>
+    section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        margin-bottom: 0;
+    }
+    img {
+        width: 80px;
+        aspect-ratio: 1;
+    }
+    p{
+        width: 100%;
+        text-align: center;
+    }
+</style>
