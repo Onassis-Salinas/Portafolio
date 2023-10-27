@@ -22,8 +22,16 @@
 
     const mouseMove = (xPos) => {
         mousePosition = xPos;
+
         if (clicking) {
-            const result = (mousePosition - initialPosition) * 1.5;
+            div.animate(
+                {
+                    left: `${left}px`,
+                },
+                { duration: 1000, fill: "forwards" }
+            );
+
+            const result = (mousePosition - initialPosition) * 1.75;
 
             if (left + result <= 0 && left + result > -(sliderWidth - containerWidth)) {
                 left += result;
@@ -40,7 +48,7 @@
 <h3>{projectSection.title[languageSelected]}</h3>
 <div class="projects-container" bind:this={container}>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="slider" style="left:{left}px" on:mousedown={click} bind:this={div}>
+    <div class="slider" on:mousedown={click} bind:this={div}>
         {#each projectSection.projects as project}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
