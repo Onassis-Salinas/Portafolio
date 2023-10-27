@@ -6,6 +6,7 @@
     let showProject;
     let projectData;
     let projectTitle;
+    let projectLinks;
     let projectTechnologies;
 
     function selectProject(title, index) {
@@ -13,6 +14,7 @@
         projectData = projectsData[index];
         projectTitle = title;
         projectTechnologies = projectsTechnologies[index];
+        projectLinks = projectsLinks[index];
     }
 
     const projectSections = [
@@ -47,12 +49,12 @@
     ];
 
     const projectsData = [
-        ["/Images/page7.png", ["Una landing page profesional que sigue los estándares de diseño.", "A professional landing page following design standards."], "/Images/page8.png", ["Diseño responsive para todo tipo de pantallas y un estilo llamativo.", "Responsive design for all types of screens and an eye-catching style."], "https://cafeteria-od1.netlify.app/"],
-        ["/Images/page1.png", ["Un portafolio con diseño simple e impactante listo para mostrar las mejores fotos.", "A portfolio with a simple and impressive design ready to showcase the best photos."], "/Images/page2.png", ["Fotografías que destacan entre tanta simplicidad, generando un espacio cautivador.", "Photographs that stand out amidst such simplicity, creating a captivating space."], "https://photographer-portfolio-od3.netlify.app/"],
-        ["/Images/page11.png", ["Tienda en línea con artículos de ciclismo.", "E-commerce with bike articles."], "/Images/page12.png", ["Diseño moderno y responsive que cumple con todas las necesidades de un negocio.", "Modern and responsive design that meets all business requirements."], "https://ecommerce-3a4dd.web.app/"],
-        ["/Images/page3.png", ["Un portafolio elegante que resalta la belleza de las fotografías exhibidas.", "An elegant portfolio that highlights the beauty of the displayed photographs."], "/Images/page4.png", ["Una galería que abarca toda la pantalla, creando una experiencia única.", "A gallery that covers the entire screen, creating a unique experience."], "https://photographer-portfolio-od2.netlify.app/"],
-        ["/Images/page9.png", ["Diseño moderno y refrescante a la altura de una gran cafetería.", "Modern and refreshing design befitting a great coffee shop."], "/Images/page10.png", ["Un estilo minimalista sin perder el toque distintivo.", "A minimalist style without losing its distinctive touch."], "https://cafeteria-od2.netlify.app/"],
-        ["/Images/page5.png", ["Una barra lateral y una galería, más que suficiente cuando se acompañan de excelentes fotografías.", "A sidebar and a gallery, more than enough when accompanied by excellent photographs."], "/Images/page6.png", ["Diseño responsive listo para cualquier dispositivo, conservando la esencia del diseño.", "Responsive design ready for any device while preserving the essence of the design."], "https://photographer-portfolio-od1.netlify.app/"],
+        ["/Images/page7.png", ["Una landing page profesional que sigue los estándares de diseño.", "A professional landing page following design standards."], "/Images/page8.png", ["Diseño responsive para todo tipo de pantallas y un estilo llamativo.", "Responsive design for all types of screens and an eye-catching style."]],
+        ["/Images/page1.png", ["Un portafolio con diseño simple e impactante listo para mostrar las mejores fotos.", "A portfolio with a simple and impressive design ready to showcase the best photos."], "/Images/page2.png", ["Fotografías que destacan entre tanta simplicidad, generando un espacio cautivador.", "Photographs that stand out amidst such simplicity, creating a captivating space."]],
+        ["/Images/page11.png", ["Tienda en línea con artículos de ciclismo.", "E-commerce with bike articles."], "/Images/page12.png", ["Diseño moderno y responsive que cumple con todas las necesidades de un negocio.", "Modern and responsive design that meets all business requirements."]],
+        ["/Images/page3.png", ["Un portafolio elegante que resalta la belleza de las fotografías exhibidas.", "An elegant portfolio that highlights the beauty of the displayed photographs."], "/Images/page4.png", ["Una galería que abarca toda la pantalla, creando una experiencia única.", "A gallery that covers the entire screen, creating a unique experience."]],
+        ["/Images/page9.png", ["Diseño moderno y refrescante a la altura de una gran cafetería.", "Modern and refreshing design befitting a great coffee shop."], "/Images/page10.png", ["Un estilo minimalista sin perder el toque distintivo.", "A minimalist style without losing its distinctive touch."]],
+        ["/Images/page5.png", ["Una barra lateral y una galería, más que suficiente cuando se acompañan de excelentes fotografías.", "A sidebar and a gallery, more than enough when accompanied by excellent photographs."], "/Images/page6.png", ["Diseño responsive listo para cualquier dispositivo, conservando la esencia del diseño.", "Responsive design ready for any device while preserving the essence of the design."]],
     ];
 
     const projectsTechnologies = [
@@ -63,6 +65,15 @@
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
     ];
+
+    const projectsLinks = [
+        ["https://cafeteria-od1.netlify.app/", "https://github.com/Onassis-Salinas/Cafeteria-Practice1"],
+        ["https://photographer-portfolio-od3.netlify.app/", "https://github.com/Onassis-Salinas/photographer3"],
+        ["https://ecommerce-3a4dd.web.app/"],
+        ["https://photographer-portfolio-od2.netlify.app/", "https://github.com/Onassis-Salinas/Photographer2"],
+        ["https://cafeteria-od2.netlify.app/", "https://github.com/Onassis-Salinas/Cafeteria-3"],
+        ["https://photographer-portfolio-od1.netlify.app/", "https://github.com/Onassis-Salinas/Photographer"],
+    ];
 </script>
 
 <Section title={["Proyectos", "Projects"][languageSelected]} bind:languageSelected>
@@ -71,7 +82,7 @@
     {/each}
 </Section>
 
-<Project title={projectTitle} assets={projectData} technologies={projectTechnologies} bind:showProject />
+<Project title={projectTitle} assets={projectData} technologies={projectTechnologies} {projectLinks} bind:showProject />
 
 <style>
 </style>

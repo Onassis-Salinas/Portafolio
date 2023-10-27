@@ -10,6 +10,7 @@
     export let title;
     export let assets;
     export let technologies;
+    export let projectLinks;
 
     let scrollDiv;
 
@@ -29,17 +30,26 @@
         {#each assets as asset}
             {#if asset.includes(".jpg") || asset.includes(".png") || asset.includes(".webp")}
                 <img src={asset} alt="" />
-            {:else if asset.includes("http")}
-                <a href={asset}>{["visitar", "visit"][languageSelected]}</a>
             {:else}
                 <p>{asset[languageSelected]}</p>
             {/if}
         {/each}
+
         <h3>{["Tecnologias usadas:", "Used technologies:"][languageSelected]}</h3>
         <div class="technologies-container">
             {#each technologies as tech}
                 <Icon route={tech} />
             {/each}
+
+            <div class="links-container">
+                {#each projectLinks as link}
+                    {#if link.includes("github")}
+                        <a href={link}><button class="github"><img src="Logos/Github.svg" alt="" />{"Github"}</button></a>
+                    {:else}
+                        <a href={link}><button class="link"><img src="/link.svg" alt="" />{["Visitar", "Visit"][languageSelected]}</button></a>
+                    {/if}
+                {/each}
+            </div>
         </div>
     </div>
 {/if}
@@ -79,9 +89,41 @@
     a {
         padding: 0px;
     }
+    .links-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 30px;
+    }
     button {
-        background-color: var(--text);
-        color: var(--bc);
+        padding: 5px 20px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        border-radius: var(--br);
+        font-size: var(--fs3);
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        transition: all .2s ease;
+    }
+    button:hover{
+        transform: translateY(-5px);
+
+    }
+    button img{
+        height: 100%;
+        aspect-ratio: 1;
+    }
+    .github {
+        background-color: #24292d;
+        color: #fff;
+    }
+    .link {
+        color: #000;
+        background-color: #fff;
     }
     .shadow {
         width: 110vw;
