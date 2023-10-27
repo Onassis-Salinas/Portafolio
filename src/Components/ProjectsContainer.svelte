@@ -20,6 +20,14 @@
         initialPosition = mousePosition;
     };
 
+    $: if (div)
+        div.animate(
+            {
+                left: `0px`,
+            },
+            { duration: 1000, fill: "forwards" }
+        );
+
     const mouseMove = (xPos) => {
         mousePosition = xPos;
 
