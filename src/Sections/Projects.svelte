@@ -1,11 +1,19 @@
 <script>
     import Project from "../Components/Project.svelte";
+    import ProjectsContainer from "../Components/ProjectsContainer.svelte";
     import Section from "../Components/Section.svelte";
-    let languageSelected;
-    let showProject = false;
+    let languageSelected = 0;
+    let showProject;
     let projectData;
     let projectTitle;
     let projectTechnologies;
+
+    function selectProject(title, index) {
+        showProject = true;
+        projectData = projectsData[index];
+        projectTitle = title;
+        projectTechnologies = projectsTechnologies[index];
+    }
 
     const projectSections = [
         {
@@ -38,13 +46,6 @@
         },
     ];
 
-    function selectProject(title, index) {
-        showProject = true;
-        projectData = projectsData[index];
-        projectTitle = title;
-        projectTechnologies = projectsTechnologies[index];
-    }
-
     const projectsData = [
         ["/Images/page7.png", ["Una landing page profesional que sigue los estándares de diseño.", "A professional landing page following design standards."], "/Images/page8.png", ["Diseño responsive para todo tipo de pantallas y un estilo llamativo.", "Responsive design for all types of screens and an eye-catching style."], "https://cafeteria-od1.netlify.app/"],
         ["/Images/page1.png", ["Un portafolio con diseño simple e impactante listo para mostrar las mejores fotos.", "A portfolio with a simple and impressive design ready to showcase the best photos."], "/Images/page2.png", ["Fotografías que destacan entre tanta simplicidad, generando un espacio cautivador.", "Photographs that stand out amidst such simplicity, creating a captivating space."], "https://photographer-portfolio-od3.netlify.app/"],
@@ -57,7 +58,7 @@
     const projectsTechnologies = [
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
-        ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
+        ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg", "Logos/Firebase.svg"],
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
         ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/Svelte.svg"],
@@ -66,47 +67,11 @@
 
 <Section title={["Proyectos", "Projects"][languageSelected]} bind:languageSelected>
     {#each projectSections as projectSection}
-        <h3>{projectSection.title[languageSelected]}</h3>
-        <div class="projects-container">
-            {#each projectSection.projects as project}
-                <div class="project" on:click={() => selectProject(project.title, project.index)}>
-                    <img src={project.image} alt="" />
-                    <p>{project.title[languageSelected]}</p>
-                </div>
-            {/each}
-        </div>
+        <ProjectsContainer {projectSection} bind:languageSelected {selectProject} />
     {/each}
 </Section>
 
 <Project title={projectTitle} assets={projectData} technologies={projectTechnologies} bind:showProject />
 
 <style>
-    .projects-container {
-        display: flex;
-        gap: 10px;
-        flex-shrink: 0;
-        overflow-x: auto;
-        align-items: flex-start;
-    }
-    .project {
-        align-self: flex-start;
-        flex-shrink: 0;
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
-        background-color: var(--fc);
-        border-radius: var(--br);
-    }
-    p {
-        margin: 0;
-        margin-top: 5px;
-    }
-
-    img {
-        width: 90%;
-        aspect-ratio: 16/9;
-        object-fit: cover;
-    }
 </style>
