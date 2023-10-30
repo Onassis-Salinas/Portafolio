@@ -107,6 +107,7 @@
         aspect-ratio: 16/9;
         background-size: cover;
         background-position: center;
+        border-radius: var(--br);
     }
 
     @media (hover: none) {
