@@ -17,4 +17,14 @@
     img:hover {
         transform: translateY(-3px);
     }
+    @media(max-width:600px){
+        img{
+            height: 70px;
+        }
+    }
+    @media(max-width:400px){
+        img{
+            height: 50px;
+        }
+    }
 </style>

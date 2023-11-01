@@ -75,8 +75,8 @@
         display: flex;
         align-items: flex-start;
         overflow: hidden;
-        height: 280px;
         user-select: none;
+        height: clamp(200px, 100%, 290px);
     }
     .slider {
         height: 100%;
@@ -95,7 +95,7 @@
         padding: 20px 10px;
         background-color: var(--fc);
         border-radius: var(--br);
-        width: 400px;
+        width: clamp(260px, 85vw, 400px);
     }
     p {
         margin: 0;

@@ -19,6 +19,9 @@
 
     --br: 5px;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -52,6 +55,20 @@ a {
     text-decoration: none;
     color: var(--text);
     font-size: var(--fs2);
+}
+
+@media (max-width: 600px) {
+    :root {
+        --fs5: 80px;
+    }
+}
+@media (max-width: 400px) {
+    :root {
+        --fs2: 16px;
+        --fs3: 22px;
+        --fs4: 40px;
+        --fs5: 60px;
+    }
 }
 
 /* Estilos para la barra de desplazamiento en la barra lateral */

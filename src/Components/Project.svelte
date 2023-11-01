@@ -57,11 +57,11 @@
 <style>
     .container {
         position: fixed;
-        top: 50%;
+        top: calc(50% + 25px);
         left: 50%;
         transform: translate(-50%, -50%);
         width: calc(min(90%, 600px) - 40px);
-        height: 90lvh;
+        height: calc(90lvh - 50px);
         overflow-y: auto;
         display: flex;
         flex-direction: column;

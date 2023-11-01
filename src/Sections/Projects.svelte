@@ -106,6 +106,3 @@
     {/each}
 </Section>
 <Project title={projectTitle} assets={projectData} technologies={projectTechnologies} {projectLinks} bind:showProject />
-
-<style>
-</style>

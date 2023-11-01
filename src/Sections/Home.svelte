@@ -1,4 +1,5 @@
 <script>
+    import SelectLanguage from "../Components/SelectLanguage.svelte";
     import { language } from "../store";
     let languageSelected;
     const unsubscribe = language.subscribe((val) => (languageSelected = val));
@@ -30,6 +31,7 @@
 </script>
 
 <section>
+    <SelectLanguage />
     <h1>{text}</h1>
     <p>{["Un desarrollador apasionado en busca de nuevos proyectos", "A passionate developer searching for new projects"][languageSelected]}</p>
     <img src="/down.svg" alt="" id="down-arrow" />
