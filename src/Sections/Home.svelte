@@ -6,8 +6,8 @@
     const letters = "AbCDeGFhIJkLMNoPQrSTUvWXYz";
 
     const texts = [
-        // ["Hola, soy Onassis Salinas", "Hi, Im Onassis Salinas"],
-        ["dasdasd asd asd asd sadssadas as ", "asdasdas d asd asd as dsad as"],
+        ["Hola, soy Onassis Salinas", "Hi, Im Onassis Salinas"],
+        // ["dasdasd asd asd asd sadssadas as ", "asdasdas d asd asd as dsad as"],
     ];
 
     $: finaltext = texts[0][languageSelected];
@@ -31,7 +31,7 @@
 
 <section>
     <h1>{text}</h1>
-    <p>{["Un programador apasionado en busca de nuevos proyectos", "A passionate programmer searching for new projects"][languageSelected]}</p>
+    <p>{["Un desarrollador apasionado en busca de nuevos proyectos", "A passionate developer searching for new projects"][languageSelected]}</p>
     <img src="/down.svg" alt="" id="down-arrow" />
 </section>
 

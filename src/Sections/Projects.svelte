@@ -30,11 +30,11 @@
             ],
             image: "",
         },
-        {
-            title: ["Aplicaciones web", "Web applications"],
-            projects: [{ title: ["Sistema de gestion RH", "RH gestion system"], image: "", index: 0 }],
-            image: "",
-        },
+        // {
+        //     title: ["Aplicaciones web", "Web applications"],
+        //     projects: [{ title: ["Sistema de gestion RH", "RH gestion system"], image: "", index: 0 }],
+        //     image: "",
+        // },
         {
             title: ["Automatizacion", "Automation"],
             projects: [
@@ -42,10 +42,10 @@
                 { title: ["Impresora de credenciales", "Credentials Printer"], image: "/Images/auto8.jpg", index: 7 },
             ],
         },
-        {
-            title: ["Programas en excel", "Excel Applications"],
-            projects: [{ title: ["Sistema de captura de datos", "Data capture system"], image: "", index: 0 }],
-        },
+        // {
+        //     title: ["Programas en excel", "Excel Applications"],
+        //     projects: [{ title: ["Sistema de captura de datos", "Data capture system"], image: "", index: 0 }],
+        // },
     ];
 
     const projectsData = [
