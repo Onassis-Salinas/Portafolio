@@ -76,7 +76,7 @@
         align-items: flex-start;
         overflow: hidden;
         user-select: none;
-        height: clamp(200px, 100%, 290px);
+        height: calc(clamp(260px, 85vw, 350px) * .83);
     }
     .slider {
         height: 100%;
