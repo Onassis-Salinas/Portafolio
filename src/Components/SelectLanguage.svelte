@@ -35,6 +35,9 @@
         display: flex;
         gap: min(50vw, 500px);
     }
+    p{
+        cursor: pointer;
+    }
     .left {
         transform: rotateZ(-5deg);
     }
