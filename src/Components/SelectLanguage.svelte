@@ -18,7 +18,7 @@
     let show = false;
     setTimeout(() => {
         show = true;
-    }, 2000);
+    }, 2500);
 </script>
 
 {#if show}

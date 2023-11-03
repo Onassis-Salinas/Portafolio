@@ -3,7 +3,26 @@
     import Section from "../Components/Section.svelte";
     let languageSelected;
 
-    let images = ["Logos/HTML.svg", "Logos/CSS.svg", "Logos/JavaScript.svg", "Logos/React.svg", "Logos/Svelte.svg", "Logos/NodeJs.svg", "Logos/Expressjs.svg", "Logos/Python.svg", "Logos/django.svg", "Logos/Csharp.svg", "Logos/Net.svg", "Logos/VBA.svg", "Logos/MongoDB.svg", "Logos/MySQL.svg", "Logos/Firebase.svg", "Logos/Git.svg", "Logos/Github.svg", "Logos/VSCode.svg"];
+    let images = [
+        "Logos/HTML.svg",
+        "Logos/CSS.svg",
+        "Logos/JavaScript.svg",
+        "Logos/React.svg",
+        "Logos/Svelte.svg",
+        "Logos/NodeJs.svg",
+        "Logos/Expressjs.svg",
+        "Logos/Python.svg",
+        "Logos/django.svg",
+        // "Logos/Csharp.svg",
+        // "Logos/Net.svg",
+        "Logos/VBA.svg",
+        "Logos/MongoDB.svg",
+        "Logos/MySQL.svg",
+        "Logos/Firebase.svg",
+        "Logos/Git.svg",
+        "Logos/Github.svg",
+        // "Logos/VSCode.svg"
+    ];
 </script>
 
 <Section title={["Sobre mi", "About me"][languageSelected]} bind:languageSelected>
