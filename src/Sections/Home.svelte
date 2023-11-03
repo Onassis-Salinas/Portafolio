@@ -67,6 +67,12 @@
         animation: up-down 1s ease-in-out infinite;
     }
 
+    @media (max-width: 600px) {
+        p {
+            text-align: center;
+        }
+    }
+
     @keyframes up-down {
         0% {
             transform: translate(-50%, 0);
